@@ -1,7 +1,10 @@
 <script>
 	import overtoastlogo from '#lib/assets/overtoastlogo.svg';
+	import Head from '#lib/components/Head.svelte';
 	import * as Card from '#lib/components/ui/card/index.js';
 </script>
+
+<Head title="Home" />
 
 {#snippet card()}
 	<Card.Root class="w-96 rounded-4xl bg-card/30">
