@@ -7,14 +7,10 @@
 		"build": {
 			"inputs": [{ "step": "install" }],
 			"commands": ["bun --bun run build"]
-		},
-		"migrate": {
-			"inputs": [{ "step": "install" }],
-			"commands": ["bun --bun run db:migrate"]
 		}
 	},
 	"deploy": {
-		"inputs": [{ "step": "migrate" }, { "step": "build" }],
+		"inputs": [{ "step": "build" }],
 		"startCommand": "bun run start"
 	}
 }
