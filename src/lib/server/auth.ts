@@ -15,6 +15,9 @@ export const auth = betterAuth({
 	baseURL: {
 		allowedHosts: [new URL(ORIGIN ?? 'http://localhost:5173').host]
 	},
+	advanced: {
+		trustedProxyHeaders: true
+	},
 	secret: APP_SECRET,
 	database: drizzleAdapter(db, { provider: 'pg', schema }),
 	socialProviders: {
