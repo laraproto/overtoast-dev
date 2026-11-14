@@ -2,15 +2,42 @@
 	"$schema": "https://schema.railpack.com",
 	"steps": {
 		"install": {
+			"deployOutputs": [],
 			"commands": ["bun install"]
 		},
 		"build": {
-			"inputs": [{ "step": "install" }],
-			"commands": ["bun --bun run build"]
+			"inputs": [
+				{
+					"step": "install"
+				}
+			],
+			"variables": {
+				"DRIZZLE_MIGRATION_DIR": "/app/drizzle",
+				"DATABASE_URL": "postgres://postgres:postgres@localhost:5432/postgres",
+				"ORIGIN": "http://localhost:5173",
+				"APP_SECRET": "APP_SECRET",
+				"DISCORD_CLIENT_ID": "DISCORD_CLIENT_ID",
+				"DISCORD_CLIENT_SECRET": "DISCORD_CLIENT_SECRET"
+			},
+			"commands": ["bun --bun run build"],
+			"deployOutputs": [
+				{
+					"include": ["build", "drizzle"]
+				}
+			]
 		}
 	},
 	"deploy": {
-		"inputs": [{ "step": "build" }],
-		"startCommand": "bun run start"
+		"base": { "image": "oven/bun:latest" },
+		"inputs": [
+			{
+				"step": "build"
+			}
+		],
+		"variables": {
+			"DRIZZLE_MIGRATION_DIR": "/app/drizzle",
+			"TZ": "UTC"
+		},
+		"startCommand": "bun --bun run ./build"
 	}
 }
