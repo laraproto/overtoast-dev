@@ -23,7 +23,7 @@
 {/snippet}
 
 <div class="flex flex-1 flex-col">
-	<div class="flex flex-col items-center justify-center gap-4 pt-4 pb-8 md:flex-row md:gap-x-24">
+	<div id="hero" class="flex flex-col items-center justify-center gap-4 pt-4 pb-8 md:flex-row md:gap-x-24">
 		<img src={overtoastlogo} alt="Overtoast Logo" />
 		<h1 class="text-center font-title text-6xl font-semibold md:w-96 md:tracking-widest">
 			Overtoast Interactive
@@ -36,5 +36,8 @@
 		{@render card()}
 		{@render card()}
 	</div>
-	<div class="flex-1 items-center justify-center bg-secondary"></div>
+	<div class="flex flex-col min-h-screen flex-1 items-center justify-center bg-secondary text-center">
+		<h1 class="text-5xl font-extrabold">Contact Us</h1>
+		<p>No form here yet</p>
+	</div>
 </div>

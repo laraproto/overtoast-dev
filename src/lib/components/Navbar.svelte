@@ -2,6 +2,8 @@
 	import * as NavigationMenu from '#lib/components/ui/navigation-menu/index.js';
 	import { navigationMenuTriggerStyle } from './ui/navigation-menu/navigation-menu-trigger.svelte';
 	import { resolve } from '$app/paths';
+	import { page } from '$app/state';
+
 </script>
 
 <header
@@ -11,14 +13,44 @@
 		<div class="pointer-events-none absolute inset-x-0 flex justify-center px-16">
 			<div class="pointer-events-auto max-w-full">
 				<NavigationMenu.Root>
-					<NavigationMenu.List>
+					<NavigationMenu.List class="gap-2">
 						<NavigationMenu.Item>
-							<NavigationMenu.Link>
-								{#snippet child()}
-									<a href={resolve('/')} class={navigationMenuTriggerStyle()}>Home</a>
-								{/snippet}
+							<NavigationMenu.Link
+								active={page.route.id === '/(overview)'}
+								href={resolve('/(overview)')}
+								class={[
+									navigationMenuTriggerStyle(),
+									'h-8 border-2 border-accent bg-background hover:bg-secondary data-active:bg-secondary'
+								]}
+							>
+								Home
 							</NavigationMenu.Link>
 						</NavigationMenu.Item>
+						<NavigationMenu.Item>
+								<NavigationMenu.Link
+									active={page.route.id === '/(overview)/projects'}
+									href={resolve('/(overview)/projects')}
+									class={[
+										navigationMenuTriggerStyle(),
+										'h-8 border-2 border-accent bg-background hover:bg-secondary data-active:bg-secondary'
+									]}
+								>
+									Projects
+							</NavigationMenu.Link>
+						</NavigationMenu.Item>
+						<NavigationMenu.Item>
+								<NavigationMenu.Link
+									active={page.route.id === '/(overview)/members'}
+									href={resolve('/(overview)/members')}
+									class={[
+										navigationMenuTriggerStyle(),
+										'h-8 border-2 border-accent bg-background hover:bg-secondary data-active:bg-secondary'
+									]}
+								>
+									Members
+							</NavigationMenu.Link>
+						</NavigationMenu.Item>
+						<NavigationMenu.Indicator />
 					</NavigationMenu.List>
 				</NavigationMenu.Root>
 			</div>
