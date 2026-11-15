@@ -1,10 +1,13 @@
 <script lang="ts">
 	import * as Card from '#lib/components/ui/card/index.js';
+	import Head from '#lib/components/Head.svelte';
 	import { Button } from '#lib/components/ui/button/index.js';
 	import { FieldGroup, Field /*, FieldDescription */ } from '#lib/components/ui/field/index.js';
 
 	import { enhance } from '$app/forms';
 </script>
+
+<Head title="Sign In" />
 
 <div class="flex flex-col gap-6">
 	<Card.Root>

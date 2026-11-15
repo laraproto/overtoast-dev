@@ -16,7 +16,8 @@ export const auth = betterAuth({
 		allowedHosts: [new URL(ORIGIN ?? 'http://localhost:5173').host]
 	},
 	advanced: {
-		trustedProxyHeaders: true
+		trustedProxyHeaders: true,
+		cookiePrefix: 'overtoast'
 	},
 	secret: APP_SECRET,
 	database: drizzleAdapter(db, { provider: 'pg', schema }),

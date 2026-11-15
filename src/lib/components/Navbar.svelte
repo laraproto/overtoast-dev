@@ -3,7 +3,6 @@
 	import { navigationMenuTriggerStyle } from './ui/navigation-menu/navigation-menu-trigger.svelte';
 	import { resolve } from '$app/paths';
 	import { page } from '$app/state';
-
 </script>
 
 <header
@@ -27,27 +26,27 @@
 							</NavigationMenu.Link>
 						</NavigationMenu.Item>
 						<NavigationMenu.Item>
-								<NavigationMenu.Link
-									active={page.route.id === '/(overview)/projects'}
-									href={resolve('/(overview)/projects')}
-									class={[
-										navigationMenuTriggerStyle(),
-										'h-8 border-2 border-accent bg-background hover:bg-secondary data-active:bg-secondary'
-									]}
-								>
-									Projects
+							<NavigationMenu.Link
+								active={page.route.id === '/(overview)/projects'}
+								href={resolve('/(overview)/projects')}
+								class={[
+									navigationMenuTriggerStyle(),
+									'h-8 border-2 border-accent bg-background hover:bg-secondary data-active:bg-secondary'
+								]}
+							>
+								Projects
 							</NavigationMenu.Link>
 						</NavigationMenu.Item>
 						<NavigationMenu.Item>
-								<NavigationMenu.Link
-									active={page.route.id === '/(overview)/members'}
-									href={resolve('/(overview)/members')}
-									class={[
-										navigationMenuTriggerStyle(),
-										'h-8 border-2 border-accent bg-background hover:bg-secondary data-active:bg-secondary'
-									]}
-								>
-									Members
+							<NavigationMenu.Link
+								active={page.route.id === '/(overview)/members'}
+								href={resolve('/(overview)/members')}
+								class={[
+									navigationMenuTriggerStyle(),
+									'h-8 border-2 border-accent bg-background hover:bg-secondary data-active:bg-secondary'
+								]}
+							>
+								Members
 							</NavigationMenu.Link>
 						</NavigationMenu.Item>
 						<NavigationMenu.Indicator />
