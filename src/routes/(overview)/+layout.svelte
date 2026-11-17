@@ -5,10 +5,10 @@
 	let { children } = $props();
 </script>
 
-<div class="flex min-h-screen flex-col overflow-hidden [--header-height:calc(--spacing(14))]">
+<div class="flex h-screen flex-col overflow-hidden [--header-height:calc(--spacing(14))]">
 	<Navbar />
-	<main class="flex flex-1 flex-col overflow-hidden">
+	<main class="flex min-h-0 flex-1 flex-col overflow-y-auto">
 		{@render children?.()}
+		<Footer />
 	</main>
-	<Footer />
 </div>
