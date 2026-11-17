@@ -1,26 +1,11 @@
 <script>
 	import overtoastlogo from '#lib/assets/overtoastlogo.svg';
 	import Head from '#lib/components/Head.svelte';
-	import * as Card from '#lib/components/ui/card/index.js';
+	import ShortInfoCard from '#lib/components/ShortInfoCard.svelte';
+	import incorded from '#lib/assets/incorded.avif';
 </script>
 
 <Head title="Home" />
-
-{#snippet card()}
-	<Card.Root class="w-96 rounded-4xl bg-card/30">
-		<Card.Content class="flex flex-col items-center">
-			<img src="https://placehold.co/160x160" alt="Card Placeholder" class="w-40 pb-8" />
-			<p class="flex flex-col">
-				<span>Title</span>
-				<br />
-				<span
-					>Body text for whatever you'd like to say. Add main takeaway points, quotes, anecdotes, or
-					even a very very short story.
-				</span>
-			</p>
-		</Card.Content>
-	</Card.Root>
-{/snippet}
 
 <div class="flex flex-1 flex-col">
 	<div
@@ -35,14 +20,19 @@
 	<div
 		class="flex flex-col items-center justify-center gap-4 gap-x-8 bg-linear-to-b from-background via-[#721E2C] to-secondary md:flex-row"
 	>
-		{@render card()}
-		{@render card()}
-		{@render card()}
+		<ShortInfoCard>
+			<img src={incorded} alt="Random Incorded Sketch" class="w-40 pb-8" />
+			<p class="flex flex-col">
+				<span>incorded.</span>
+				<br />
+				<span>Current in-progress project, there's not much to say about it </span>
+			</p>
+		</ShortInfoCard>
 	</div>
 	<div
 		class="flex min-h-screen flex-1 flex-col items-center justify-center bg-secondary text-center"
 	>
-		<h1 class="text-5xl font-extrabold">Contact Us</h1>
-		<p>No form here yet</p>
+		<h1 class="text-5xl font-extrabold">Team</h1>
+		<p>I'm too lazy to set this up right now - Lara</p>
 	</div>
 </div>
